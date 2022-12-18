@@ -17,7 +17,7 @@ For example ``` ([A-Za-z0-9-]+) ```
 - [Character Classes](#character-classes)
 - [The OR Operator](#the-or-operator)
 - [Flags](#flags)
-- [Character Escapes](#character-escapes)
+- [Author](#Author)
 
 ## Regex Components
 
@@ -115,8 +115,24 @@ To match a string that contains the word "cat" or the word "dog", you can use th
 
 ### Flags
 
-### Character Escapes
+In regular expressions, flags are used to modify the behavior of the regular expression. Flags are usually specified at the end of the regular expression, after the closing slash ```(/)```.
+
+Here are some common flags that are used in regular expressions:
+
+* **The "i" flag**: The ```i``` flag stands for "insensitive" and makes the regular expression case-insensitive. For example, the regular expression ```/cat/i``` will match "cat", "Cat", "CAT", etc.
+
+* **The "m" flag**: The ```m``` flag stands for "multiline" and makes the anchors ```(^ and $)``` match the start and end of a line, rather than the start and end of the input string.
+
+* **The "s" flag**: The ```s``` flag stands for "single line" and makes the dot ```(.)``` match any character, including a newline. Without the ```s``` flag, the dot will not match a newline.
+
+* **The "x" flag**: The ```x``` flag stands for "extended" and allows you to add comments and whitespace to the regular expression, which can make it easier to read and understand.
+
+#### Examples
+
+Here is an example of how flags can be used in a regular expression:
+
+To match a string that contains the word "cat" or "Cat", regardless of case, you can use the regular expression ```/cat/i```. The ```i``` flag will make the regular expression case-insensitive, so it will match "cat" and "Cat".
 
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+Daniel is a Full Stack Web Developer currently studying at the UC Berkeley Bootcamp. To see his work, make sure you checkout his [GitHub profile](https://github.com/LeinadZz)
