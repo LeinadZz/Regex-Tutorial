@@ -105,6 +105,14 @@ To match a string that contains a word followed by a punctuation mark, you can u
 
 ### The OR Operator
 
+In regular expressions, the OR operator ```(|)``` is used to specify a choice between two or more alternatives. It is similar to the logical OR operator ```(||)``` in programming languages.
+
+#### Examples 
+
+Here is an example of how the OR operator can be used in a regular expression:
+
+To match a string that contains the word "cat" or the word "dog", you can use the regular expression ```cat|dog```. The OR operator ```(|)``` will match either "cat" or "dog".
+
 ### Flags
 
 ### Character Escapes
