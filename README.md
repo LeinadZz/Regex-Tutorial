@@ -29,7 +29,7 @@ In regular expressions, an anchor is a symbol that matches a position in the inp
 
 * **End-of-line (EOL) anchor**: The EOL anchor ```($)``` matches the position at the end of a line. For example, the regular expression ```end$``` will match "end" at the end of a line, but it will not match "end" if it appears earlier in a line.
 
-#### Example
+#### Examples
 
 Here are some examples of how anchors can be used in regular expressions:
 
@@ -63,9 +63,45 @@ Here are some examples of how quantifiers can be used in regular expressions:
 
 ### Grouping Constructs
 
-### Bracket Expressions
+In regular expressions, grouping constructs are used to group characters, character classes, or other regular expressions together and to apply quantifiers to the entire group. There are several types of grouping constructs:
+
+* **Capturing group**: A capturing group (e.g., (pattern)) captures the text matched by the group and stores it in a numbered group. You can then use backreferences to refer to the captured text later in the regular expression or in the replacement string of a search-and-replace operation.
+
+* **Non-capturing group**: A non-capturing group (e.g., (?:pattern)) groups characters, character classes, or other regular expressions together, but it does not capture the text matched by the group. Non-capturing groups are useful when you want to apply a quantifier to a group of characters, but you don't need to capture the group's match.
+
+* **Positive lookahead**: A positive lookahead (e.g., (?=pattern)) is a zero-width assertion that asserts that the characters following the current position in the input string match the pattern inside the lookahead. The lookahead does not consume any characters, so it does not contribute to the overall match.
+
+* **Negative lookahead**: A negative lookahead (e.g., (?!pattern)) is similar to a positive lookahead, but it asserts that the characters following the current position in the input string do not match the pattern inside the lookahead.
+
+Here are some examples of how grouping constructs can be used in regular expressions:
+
+To match a string that contains a word surrounded by parentheses, you can use the regular expression "( ( \w+ ) )". The capturing group (\w+) will capture the word inside the parentheses, and the backreference \1 can be used to refer to the captured text later in the regular expression or in the replacement string of a search-and-replace operation.
+
+To match a string that contains a word followed by a space and a digit, you can use the non-capturing group "(?:\w+ )\d". The non-capturing group (\w+ ) will group the word and the space together, and the \d character class will match the digit.
+
+To match a string that contains a word followed by a space and the word "cat", you can use the positive lookahead "(\w+ )(?=cat)". The capturing group (\w+ ) will capture the word, and the positive lookahead (?=cat) will assert that the characters following the word are "cat".
 
 ### Character Classes
+
+In regular expressions, a character class is a set of characters enclosed in square brackets ```([ and ])```. A character class matches any single character that is a member of the class. There are several types of character classes:
+
+* **Predefined character classes**: There are several predefined character classes that you can use to match common types of characters. These include ```\d (any digit)```, ```\w (any word character)```, ```\s (any whitespace character)```, and ```\b (a word boundary)```.
+
+* **Negated character classes**: You can negate a character class by placing a caret ```(^)``` at the beginning of the class. A negated character class matches any single character that is not a member of the class. For example, ```[^\d]``` will match any character that is not a digit.
+
+* **Range of characters**: You can specify a range of characters by separating the start and end characters with a hyphen ```(-)```. For example, ```[a-z]``` will match any lowercase letter, and ```[A-Z0-9]``` will match any uppercase letter or digit.
+
+* **Union of character classes**: You can use the pipe symbol ```(|)``` to specify a union of character classes. For example, ```[a-z|A-Z]``` will match any letter, and ```[\d|\w]``` will match any digit or word character.
+
+#### Examples
+
+Here are some examples of how character classes can be used in regular expressions:
+
+To match a string that contains only digits, you can use the regular expression ```^\d+$```. The ```^``` anchor will match the start of the line, the ```\d``` character class will match any digit, and the ```+``` quantifier will match one or more digits. The ```$``` anchor will match the end of the line.
+
+To match a string that contains a single uppercase letter or digit, you can use the regular expression ```[A-Z0-9]```. The character class ```[A-Z0-9]``` will match any uppercase letter or digit.
+
+To match a string that contains a word followed by a punctuation mark, you can use the regular expression ```\w+[.,;:!?]```. The ```\w``` character class will match any word character, and the ```+``` quantifier will match one or more word characters. The character class ```[.,;:!?]``` will match any punctuation mark.
 
 ### The OR Operator
 
